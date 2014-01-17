@@ -1,0 +1,24 @@
+#:kivy 1.7
+
+<KlaatuLabel>:
+    markup: True
+    opacity: .5
+
+<KlaatuImage>:
+    allow_stretch: True
+    keep_ratio: False
+        
+Launcher:
+    direction: 'left'
+    FloatLayout:
+        KlaatuImage:
+            source: 'bg1.jpg'
+        KlaatuLabel:
+            text: '[size=32][b]Slide to enjoy >>>[/b][/size]'
+    FloatLayout:
+        KlaatuImage:
+            source: 'bg2.jpg'
+            Button:
+                text: 'TouchTracer'
+                on_release: root.run_touchtracer()
+

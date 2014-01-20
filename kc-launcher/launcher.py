@@ -15,7 +15,7 @@ from kivy.uix.label import Label
 from kivy.uix.image import Image
 from kivy.core.window import Window
 from kivy.lang import Builder
-from touchtracer import Touchtracer, TouchtracerApp
+from apps.touchtracer import Touchtracer, TouchtracerApp
 
 class KlaatuImage(Image):
     pass
@@ -25,7 +25,7 @@ class KlaatuLabel(Label):
 
 class Launcher(Carousel):
     def run_touchtracer(self):
-        w = Builder.load_file(os.path.dirname(os.path.realpath(__file__)) + "/touchtracer/touchtracer.kv")
+        w = Builder.load_file(os.path.dirname(os.path.realpath(__file__)) + "/apps/touchtracer/touchtracer.kv")
         Window.remove_widget(self)
         Window.add_widget(Touchtracer())
 

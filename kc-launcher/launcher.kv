@@ -7,18 +7,25 @@
 <KlaatuImage>:
     allow_stretch: True
     keep_ratio: False
-        
-Launcher:
-    direction: 'left'
-    FloatLayout:
-        KlaatuImage:
-            source: 'bg1.jpg'
-        KlaatuLabel:
-            text: '[size=32][b]Slide to enjoy >>>[/b][/size]'
-    FloatLayout:
-        KlaatuImage:
-            source: 'bg2.jpg'
-            Button:
-                text: 'TouchTracer'
-                on_release: root.run_touchtracer()
 
+<KlaatuButton>:
+    background_color: .37, .62, .63, .5
+    markup: True
+
+<LauncherScreen>:
+    KlaatuImage:
+        source: 'bg1.jpg'
+
+    BoxLayout:
+        size_hint: .5, None
+        height: 250
+        pos_hint: { 'center_x': .5 }
+        orientation: 'vertical'
+
+        KlaatuButton:
+            text: '[size=28][b]Touchtracer[/b][/size]'
+            on_release: root.manager.current = root.manager.next()
+
+        KlaatuButton:
+            text: '[size=28][b]Something[/b][/size]'
+            on_release: root.manager.current = root.manager.next()

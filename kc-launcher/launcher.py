@@ -24,24 +24,22 @@ class KlaatuImage(Image):
 class KlaatuLabel(Label):
     pass
 
-class Launcher(Screen):
-    pass
-
 class LauncherScreen(Screen):
     pass
 
 class LauncherApp(App):
-    def build_screen_touchtracer(self):
-        # Build the Touchtracer demo app
-        touchtracer = Builder.load_file(os.path.dirname(os.path.realpath(__file__)) + "/apps/touchtracer/touchtracer.kv")
-        touchtracer_screen = Screen(name = 'Touchtracer')
-        touchtracer_screen.add_widget(Touchtracer())
-        return touchtracer_screen
+    # Run the Touchtracer demo.
+    def run_touchtracer(self):
+        if not self.root.has_screen('Touchtracer'):
+            touchtracer = Builder.load_file(os.path.dirname(os.path.realpath(__file__)) + "/apps/touchtracer/touchtracer.kv")
+            touchtracer_screen = Screen(name = 'Touchtracer')
+            touchtracer_screen.add_widget(Touchtracer(self.root))
+            self.root.add_widget(touchtracer_screen)
+        self.root.current = self.root.next()
 
     def build(self):
         root = ScreenManager(transition = SwapTransition(duration = .75))
         root.add_widget(LauncherScreen(name = 'Main'))
-        root.add_widget(self.build_screen_touchtracer())
         return root
 
 if __name__ == '__main__':

@@ -26,8 +26,14 @@ def calculate_points(x1, y1, x2, y2, steps=5):
 
 
 class Touchtracer(FloatLayout):
+    def __init__(self, rootManager):
+        self.rootManager = rootManager
+        FloatLayout.__init__(self)
 
     def on_touch_down(self, touch):
+        if self.ids.close_button.collide_point(touch.x, touch.y):
+            self.rootManager.current = self.rootManager.previous()
+            return
         win = self.get_parent_window()
         ud = touch.ud
         ud['group'] = g = str(touch.uid)

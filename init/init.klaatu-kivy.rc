@@ -9,6 +9,7 @@ service klaatu_kivy /system/bin/logwrapper /system/bin/python /system/share/kivy
     setenv PYTHONHOME /system
     setenv LD_LIBRARY_PATH $LD_LIBRARY_PATH:/system/lib/python2.7:/system/lib/python2.7/lib-dynload:/system/lib/python2.7/site-packages
     setenv ANDROID_ARGUMENT 1
+    setenv PLATFORM_KLAATU 1
     setenv ANDROID_PRIVATE /system/lib/python-private 
     setenv ANDROID_APP_PATH /data/app
     setenv KIVY_WINDOW egl_klaatu

@@ -1,7 +1,7 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-launcher_dir := $(TARGET_OUT_SHARED_LIBRARIES)/python2.7/kc-launcher
+launcher_dir := $(TARGET_OUT)/share/kc-launcher
 
 app := kc-launcher
 $(app): srcdir := $(LOCAL_PATH)

@@ -1,4 +1,4 @@
-service klaatu_kivy /system/bin/logwrapper /system/bin/python /system/share/kivy-examples/demo/touchtracer/main.py
+service klaatu_kivy /system/bin/logwrapper /system/bin/python /system/share/kc-launcher/launcher.py
     user root 
     group system 
     setenv EXTERNAL_STORAGE /mnt/sdcard

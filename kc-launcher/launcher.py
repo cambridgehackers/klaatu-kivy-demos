@@ -3,6 +3,7 @@ KivyCat Launcher
 ================
 '''
 
+import os
 import os.path
 import kivy
 from kivy.app import App, Widget
@@ -36,6 +37,12 @@ class LauncherApp(App):
             touchtracer_screen.add_widget(Touchtracer(self.root))
             self.root.add_widget(touchtracer_screen)
         self.root.current = self.root.next()
+
+    def power_off(self):
+        os.system('poweroff -d0 -f')
+
+    def switch_qml(self):
+        os.system('setprop sys.ui.config qt')
 
     def build(self):
         root = ScreenManager(transition = SwapTransition(duration = .75))

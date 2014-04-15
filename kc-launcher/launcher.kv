@@ -27,5 +27,13 @@
             on_release: app.run_touchtracer()
 
         KlaatuButton:
-            text: '[size=28][b]Something[/b][/size]'
-            on_release: root.manager.current = root.manager.next()
+            text: '[size=28][b]Switch to QML[/b][/size]'
+            on_release: app.switch_qml()
+
+        KlaatuButton:
+            text: '[size=28][b]Power Off[/b][/size]'
+            on_release: app.power_off()
+
+#        KlaatuButton:
+#            text: '[size=28][b]Something[/b][/size]'
+#            on_release: root.manager.current = root.manager.next()
